@@ -85,7 +85,7 @@ const textAnimElement = document.querySelector('.text-animation span');
 if (textAnimElement) {
     const words = ["Full Stack Developer", "Next.js & Django", "Containerization Expert"];
     let wordIndex = 0;
-    
+
     setInterval(() => {
         textAnimElement.style.opacity = "0";
         setTimeout(() => {
@@ -94,6 +94,6 @@ if (textAnimElement) {
             textAnimElement.style.opacity = "1";
         }, 500); // Wait for fade out
     }, 3000); // Change word every 3s
-    
+
     textAnimElement.style.transition = "opacity 0.5s ease";
 }
