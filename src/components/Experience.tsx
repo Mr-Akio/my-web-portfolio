@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
 import { CheckCircle2 } from "lucide-react";
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
