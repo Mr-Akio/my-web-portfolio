@@ -27,7 +27,7 @@ export function Projects() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm transition-colors duration-500">
+                  <div className="absolute inset-0 flex items-center justify-center bg-background/80 transition-colors duration-500">
                     <div className="text-center">
                       <PlayCircle size={48} className="mx-auto mb-2 text-muted-foreground opacity-30" />
                       <p className="text-sm font-medium text-muted-foreground opacity-50">Project screenshot coming soon</p>
