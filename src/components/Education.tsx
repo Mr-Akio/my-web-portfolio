@@ -1,4 +1,3 @@
-"use client";
 
 import { portfolioData } from "../data/portfolio";
 import { GraduationCap } from "lucide-react";

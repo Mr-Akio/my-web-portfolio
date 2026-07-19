@@ -1,4 +1,3 @@
-"use client";
 
 import { portfolioData } from "../data/portfolio";
 import { ExternalLink, PlayCircle } from "lucide-react";

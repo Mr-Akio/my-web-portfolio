@@ -1,4 +1,3 @@
-"use client";
 
 import { portfolioData } from "../data/portfolio";
 import { ArrowRight, Code2, Database, LayoutTemplate, FileText } from "lucide-react";

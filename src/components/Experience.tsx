@@ -1,4 +1,3 @@
-"use client";
 
 import { portfolioData } from "../data/portfolio";
 import { CheckCircle2 } from "lucide-react";
