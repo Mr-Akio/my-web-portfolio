@@ -11,10 +11,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10 grid md:grid-cols-12 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+        <div
           className="md:col-span-7 flex flex-col gap-6"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-muted/50 w-fit">
@@ -55,13 +52,10 @@ export function Hero() {
               Download CV
             </a>
           </div>
-        </motion.div>
+        </div>
 
         {/* Terminal Mockup */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        <div
           className="md:col-span-5 hidden md:block"
         >
           <div className="relative w-full aspect-square border border-border bg-[#1C1C1C] rounded-xl shadow-xl flex flex-col overflow-hidden font-mono text-sm">
@@ -83,10 +77,7 @@ export function Hero() {
                 <span className="text-white">docker-compose up -d</span>
               </div>
               
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.2 }}
+              <div
                 className="flex flex-col gap-1.5 text-xs text-gray-400"
               >
                 <p>Creating network "project_default" with the default driver</p>
@@ -97,23 +88,17 @@ export function Hero() {
                 <p className="mt-2 text-white">Starting postgres_db ... <span className="text-green-400">done</span></p>
                 <p className="text-white">Starting web_app     ... <span className="text-green-400">done</span></p>
                 <p className="text-white">Starting nginx_proxy ... <span className="text-green-400">done</span></p>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.5, duration: 0.2 }}
+              <div
                 className="flex items-center gap-2 mt-4"
               >
                 <span className="text-green-400">➜</span>
                 <span className="text-blue-400">~</span>
                 <span className="text-white">python manage.py runserver</span>
-              </motion.div>
+              </div>
               
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 3.5, duration: 0.2 }}
+              <div
                 className="flex flex-col gap-1.5 text-xs text-gray-400"
               >
                 <p>Watching for file changes with StatReloader</p>
@@ -122,24 +107,18 @@ export function Hero() {
                 <p>Django version 5.0, using settings 'backend.settings'</p>
                 <p>Starting development server at http://127.0.0.1:8000/</p>
                 <p>Quit the server with CONTROL-C.</p>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 4.5, duration: 0.2 }}
+              <div
                 className="flex items-center gap-2 mt-2"
               >
-                <motion.span 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ repeat: Infinity, duration: 0.8 }}
+                <span
                   className="w-2 h-4 bg-gray-400 inline-block"
-                ></motion.span>
-              </motion.div>
+                ></span>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

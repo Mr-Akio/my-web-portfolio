@@ -15,12 +15,8 @@ export function Blog() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {portfolioData.blog.map((post, index) => (
-            <motion.div 
+            <div 
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
               className="group"
             >
               <Link href={post.link} className="block p-6 h-full border border-border bg-muted/20 hover:bg-muted/50 transition-colors rounded-lg flex flex-col justify-between gap-6">
@@ -35,7 +31,7 @@ export function Blog() {
                   <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

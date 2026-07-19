@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
 import { GraduationCap } from "lucide-react";
 
@@ -20,12 +19,8 @@ export function Education() {
           
           <div className="w-full md:w-2/3 flex flex-col gap-12">
             {portfolioData.education.map((edu, index) => (
-              <motion.div 
+              <div 
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="relative pl-8 md:pl-0"
               >
                 <div className="hidden md:block absolute left-0 top-2 bottom-2 w-px bg-border">
@@ -52,7 +47,7 @@ export function Education() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

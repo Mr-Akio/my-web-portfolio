@@ -16,12 +16,8 @@ export function Skills() {
           
           <div className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-3 gap-12">
             {portfolioData.skills.map((skillGroup, index) => (
-              <motion.div 
+              <div 
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="flex flex-col gap-4"
               >
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
@@ -35,7 +31,7 @@ export function Skills() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

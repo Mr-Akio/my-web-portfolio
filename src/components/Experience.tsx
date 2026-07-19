@@ -25,17 +25,13 @@ export function Experience() {
               </h3>
               <ul className="flex flex-col gap-4">
                 {portfolioData.experience.highlights.map((highlight, index) => (
-                  <motion.li 
+                  <li 
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
                     className="flex items-start gap-3"
                   >
                     <CheckCircle2 className="text-accent mt-1 shrink-0" size={18} />
                     <span className="text-foreground font-medium leading-relaxed">{highlight}</span>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -46,17 +42,13 @@ export function Experience() {
               </h3>
               <ul className="flex flex-col gap-4">
                 {portfolioData.experience.features.map((feature, index) => (
-                  <motion.li 
+                  <li 
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
                     className="flex items-start gap-3"
                   >
                     <CheckCircle2 className="text-accent mt-1 shrink-0" size={18} />
                     <span className="text-foreground font-medium leading-relaxed">{feature}</span>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
             </div>

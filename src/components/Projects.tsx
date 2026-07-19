@@ -14,12 +14,8 @@ export function Projects() {
 
         <div className="flex flex-col gap-24">
           {portfolioData.projects.map((project, index) => (
-            <motion.div 
+            <div 
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
               className="grid md:grid-cols-12 gap-10 items-center group"
             >
               {/* Project Image / Placeholder */}
@@ -107,7 +103,7 @@ export function Projects() {
                   )}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

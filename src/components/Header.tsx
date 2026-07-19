@@ -77,10 +77,7 @@ export function Header() {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
+        <div
           className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-border px-6 py-4 flex flex-col gap-4"
         >
           {navLinks.map((link) => (
@@ -112,7 +109,7 @@ export function Header() {
               Contact Me
             </a>
           </div>
-        </motion.div>
+        </div>
       )}
     </header>
   );
