@@ -1,18 +1,21 @@
+"use client";
 
-import { portfolioData } from "../data/portfolio";
+import { useLanguage } from "../context/LanguageContext";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function Blog() {
+  const { data } = useLanguage();
+
   return (
     <section id="blog" className="py-24 md:py-32 bg-background border-t border-border">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16 border-b border-border pb-6">
-          <h2 className="text-4xl font-bold tracking-tight">Writing & Thoughts</h2>
+          <h2 className="text-4xl font-bold tracking-tight">{data.blog.title}</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {portfolioData.blog.map((post, index) => (
+          {data.blog.items.map((post, index) => (
             <div 
               key={index}
               className="group"
@@ -25,7 +28,7 @@ export function Blog() {
                   </h3>
                 </div>
                 <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors mt-4">
-                  Read Article
+                  {data.blog.readArticle}
                   <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>

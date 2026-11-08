@@ -1,19 +1,22 @@
+"use client";
 
-import { portfolioData } from "../data/portfolio";
+import { useLanguage } from "../context/LanguageContext";
 
 export function Skills() {
+  const { data } = useLanguage();
+
   return (
     <section id="skills" className="py-24 md:py-32 bg-muted/30 border-y border-border">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row gap-12 md:gap-24">
           <div className="w-full md:w-1/4">
             <h2 className="text-sm font-medium tracking-widest text-muted-foreground uppercase border-b border-border pb-2 inline-block">
-              Technical Arsenal
+              {data.skills.title}
             </h2>
           </div>
           
           <div className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-3 gap-12">
-            {portfolioData.skills.map((skillGroup, index) => (
+            {data.skills.items.map((skillGroup, index) => (
               <div 
                 key={index}
                 className="flex flex-col gap-4"

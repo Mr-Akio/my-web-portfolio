@@ -5,15 +5,16 @@ import { notFound } from "next/navigation";
 
 // Generate static params for static site generation (SSG)
 export function generateStaticParams() {
-  return portfolioData.blog.map((post) => ({
+  return portfolioData.en.blog.items.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  // Await the params in Next.js 15+
   const resolvedParams = await params;
-  const post = portfolioData.blog.find((p) => p.slug === resolvedParams.slug);
+  const post =
+    portfolioData.th.blog.items.find((p) => p.slug === resolvedParams.slug) ||
+    portfolioData.en.blog.items.find((p) => p.slug === resolvedParams.slug);
 
   if (!post) {
     notFound();
@@ -36,13 +37,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </header>
         
         <article className="prose prose-invert max-w-none">
-          {/* Simple custom markdown renderer using tailwind classes */}
           <div 
             className="flex flex-col gap-6 text-lg leading-relaxed text-muted-foreground"
             dangerouslySetInnerHTML={{
               __html: post.content
                 ?.replace(/\n## (.*)/g, '<h2 class="text-2xl font-bold tracking-tight text-foreground mt-8 mb-4">$1</h2>')
-                ?.replace(/\n# (.*)/g, '') // Remove the main title from content since it's in the header
+                ?.replace(/\n# (.*)/g, '')
                 ?.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-foreground">$1</strong>')
                 ?.replace(/`(.*?)`/g, '<code class="px-1.5 py-0.5 rounded-md bg-muted text-foreground font-mono text-sm">$1</code>')
                 ?.replace(/```([a-z]+)?\n([\s\S]*?)\n```/g, '<pre class="p-4 rounded-lg bg-[#1C1C1C] text-gray-300 font-mono text-sm overflow-x-auto my-6 border border-border"><code>$2</code></pre>')

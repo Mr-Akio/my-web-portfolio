@@ -1,29 +1,30 @@
+"use client";
 
-import { portfolioData } from "../data/portfolio";
-import { ArrowRight, Code2, Database, LayoutTemplate, FileText } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { ArrowRight, FileText } from "lucide-react";
 
 export function Hero() {
+  const { data } = useLanguage();
+
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10 grid md:grid-cols-12 gap-12 items-center">
-        <div
-          className="md:col-span-7 flex flex-col gap-6"
-        >
+        <div className="md:col-span-7 flex flex-col gap-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-muted/50 w-fit">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              Available for work
+              {data.hero.badge}
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1]">
-            {portfolioData.hero.title}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1]">
+            {data.hero.title}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-            {portfolioData.hero.subtitle}
+            {data.hero.subtitle}
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mt-4">
@@ -31,14 +32,14 @@ export function Hero() {
               href="#work"
               className="px-6 py-3 bg-foreground text-background rounded-md font-medium hover:bg-foreground/90 transition-colors flex items-center gap-2"
             >
-              View My Projects
+              {data.hero.viewProjects}
               <ArrowRight size={18} />
             </a>
             <a
-              href={`mailto:${portfolioData.contact.email}`}
+              href={`mailto:${data.contact.email}`}
               className="px-6 py-3 bg-transparent border border-border text-foreground rounded-md font-medium hover:bg-muted transition-colors"
             >
-              Contact Me
+              {data.hero.contactMe}
             </a>
             <a
               href="/CV_Kittithat_Seelawan.pdf"
@@ -47,15 +48,13 @@ export function Hero() {
               className="px-6 py-3 bg-transparent border border-border text-foreground rounded-md font-medium hover:bg-muted transition-colors flex items-center gap-2"
             >
               <FileText size={18} />
-              Download CV
+              {data.hero.downloadCv}
             </a>
           </div>
         </div>
 
         {/* Terminal Mockup */}
-        <div
-          className="md:col-span-5 hidden md:block"
-        >
+        <div className="md:col-span-5 hidden md:block">
           <div className="relative w-full aspect-square border border-border bg-[#1C1C1C] rounded-xl shadow-xl flex flex-col overflow-hidden font-mono text-sm">
             {/* Terminal Header */}
             <div className="flex items-center px-4 py-3 bg-[#2D2D2D] border-b border-[#3D3D3D]">
@@ -75,9 +74,7 @@ export function Hero() {
                 <span className="text-white">docker-compose up -d</span>
               </div>
               
-              <div
-                className="flex flex-col gap-1.5 text-xs text-gray-400"
-              >
+              <div className="flex flex-col gap-1.5 text-xs text-gray-400">
                 <p>Creating network "project_default" with the default driver</p>
                 <p>Building web...</p>
                 <p className="text-blue-300">=&gt; [internal] load build definition from Dockerfile</p>
@@ -88,17 +85,13 @@ export function Hero() {
                 <p className="text-white">Starting nginx_proxy ... <span className="text-green-400">done</span></p>
               </div>
 
-              <div
-                className="flex items-center gap-2 mt-4"
-              >
+              <div className="flex items-center gap-2 mt-4">
                 <span className="text-green-400">➜</span>
                 <span className="text-blue-400">~</span>
                 <span className="text-white">python manage.py runserver</span>
               </div>
               
-              <div
-                className="flex flex-col gap-1.5 text-xs text-gray-400"
-              >
+              <div className="flex flex-col gap-1.5 text-xs text-gray-400">
                 <p>Watching for file changes with StatReloader</p>
                 <p>Performing system checks...</p>
                 <p className="text-green-400">System check identified no issues (0 silenced).</p>
@@ -107,12 +100,8 @@ export function Hero() {
                 <p>Quit the server with CONTROL-C.</p>
               </div>
 
-              <div
-                className="flex items-center gap-2 mt-2"
-              >
-                <span
-                  className="w-2 h-4 bg-gray-400 inline-block"
-                ></span>
+              <div className="flex items-center gap-2 mt-2">
+                <span className="w-2 h-4 bg-gray-400 inline-block"></span>
               </div>
             </div>
           </div>
